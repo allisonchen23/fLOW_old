@@ -21,7 +21,7 @@ function App() {
       </header>*/}
       <header className="App-header">
         <p>
-          Creative Lab: fLow
+          Creative Labs: fLow
         </p>
 
         <a
