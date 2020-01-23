@@ -6,8 +6,7 @@ We would like to work with the intersection between technology and engineering a
 
 ## Meet the Team
 ### Design Team
-Nick Hom, 
-Second Year Economics Major<br/>
+Nick Hom | Second Year Economics Major<br/>
 <img src="bio_imgs/nick.jpg" width="250">
 
 Sammi Owyang<br/>
