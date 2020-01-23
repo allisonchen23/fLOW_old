@@ -6,4 +6,6 @@ We would like to work with the intersection between technology and engineering a
 
 ## Meet the Team
 ### Design Team
-![Nick's pfp](http://drive.google.com/uc?export=view&id=1YLsm3LzMa8MUtcYuKmyKTR8MM8vhqfaA)
+<img src="bio_imgs/nick.jpg" width="250">
+Nick Hom, Designer
+Second Year Economics Major
