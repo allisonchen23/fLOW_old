@@ -20,7 +20,7 @@ We would like to work with the intersection between technology and engineering a
 
 **Nhung Nguyen** | Third Year <br/>
 
-**Rosa Son** | Second Year Mechanical Engineering Major
+**Rosa Son** | Second Year Mechanical Engineering Major<br/>
 <img src="bio_imgs/rosa.jpg" width="250">
 
 ### Software Team
