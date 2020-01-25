@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import firebase from './firebase.js';
 
-function App() {
-  return (
-    <div className="fLow">
-      {/*<header className="App-header">
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      temp: 0,
+    };
+  }
+
+  //lifecylce function of Components
+  //called only once 
+  componentDidMount() {
+    let db = firebase.database();
+    var curTemp = {};
+    db.ref("temp").on('value', (snapshot) => {
+       curTemp = snapshot.val();
+    });
+
+    this.setState({
+      temp: curTemp
+    });
+  }
+  render() {
+    return (
+      <div className="fLow">
+        {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,22 +42,24 @@ function App() {
           Learn React
         </a>
       </header>*/}
-      <header className="App-header">
-        <p>
-          Creative Lab: fLow
+        <header className="App-header">
+          <p>
+            Creative Lab: fLOW
         </p>
 
-        <a
-          className="github-link"
-          href="https://github.com/allisonchen23/fLOW"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Our GitHub
+          <a
+            className="github-link"
+            href="https://github.com/allisonchen23/fLOW"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our GitHub
         </a>
-      </header>
-    </div>
-  );
+        <p>From database: temp = {this.state.temp}</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -502,7 +502,7 @@
             "Date Released" : "",
             "Period of Coverage" : "",
             "Unit of Analysis" : "",
-            "Data dictionary/variable list" : ""
+            "Data dictionary_variable list" : ""
           },
           "Hawaii Line of Business" : {
             "Division name" : "",
@@ -510,7 +510,7 @@
             "Division shortname, acronym" : "",
             "Department Agency short name, acronym" : "",
             "State of Hawaii Data Book Category" : "",
-            "Department/Agency" : ""
+            "Department_Agency" : ""
           },
           "Terms of Use Acknowledgement" : {
             "I agree by uploading this dataset that it contains no private information, and adheres to the data.hawaii.gov terms of use." : "yes"
