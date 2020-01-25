@@ -14,17 +14,22 @@ class App extends Component {
 
   //lifecylce function of Components
   //called only once 
+
   componentDidMount() {
     let db = firebase.database();
-    var curTemp = {};
-    db.ref("temp").on('value', (snapshot) => {
-       curTemp = snapshot.val();
-    });
+    var curTemp=22;
+  //   db.ref("temp").on('value', (snapshot) => {
+  //     var curTemp = snapshot.val(); 
+  // });
+// ^problem child
+    //   this.setState({
+    //     temp: curTemp,
+    //   })
+    // });
+    this.setState({temp: curTemp})
 
-    this.setState({
-      temp: curTemp
-    });
   }
+
   render() {
     return (
       <div className="fLow">
@@ -55,7 +60,7 @@ class App extends Component {
           >
             Our GitHub
         </a>
-        <p>From database: temp = {this.state.temp}</p>
+          <p>From database: temp = {this.state.temp}</p>
         </header>
       </div>
     );
