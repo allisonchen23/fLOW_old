@@ -17,9 +17,10 @@ We would like to work with the intersection between technology and engineering a
 <img src="bio_imgs/juan.jpg" width="250">
 
 **Carla Cornillon** | Second Year Mechanical Engineering Major<br/>
+<img src="bio_imgs/carla.png" width="250">
 
 **Nhung Nguyen** | Third Year <br/>
-
+<img src="bio_imgs/nhung.jpg" width="250">
 **Rosa Son** | Second Year Mechanical Engineering Major<br/>
 <img src="bio_imgs/rosa.jpg" width="250">
 
@@ -33,3 +34,4 @@ We would like to work with the intersection between technology and engineering a
 <img src="bio_imgs/andrew.jpg" width="250">
 
 **Raeka Lin** | First Year Computer Science Major<br/>
+<img src="bio_imgs/raeka.jpg" width="250">
