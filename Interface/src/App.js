@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import firebase from './firebase.js';
 
 class App extends Component {
@@ -26,12 +32,12 @@ class App extends Component {
     var cur_temp;
     var speed;
     var ref = firebase.database().ref('react-50f71');
-    
-    ref.on('value', function(snapshot){
+
+    ref.on('value', function (snapshot) {
       speed = snapshot.val();
       console.log(speed);
     });
-    this.setState({ temp: speed});
+    this.setState({ temp: speed });
     // const db = firebase.database().ref().child('test');
     // const tempRef = db.child('page1');
     // tempRef.on('value', snap => {
@@ -52,27 +58,12 @@ class App extends Component {
     //this.increment_temp();
     //this.setState({temp: curTemp});
   }
-
-
   render() {
     return (
-      <div className="fLow">
-        {/*<header className="App-header">
-=======
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+      <Router>
 
-function App() {
-  return (
-    <Router>
-
-    <div className="fLow">
-      {/*<header className="App-header">
->>>>>>> master
+        <div className="fLow">
+          {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -86,28 +77,21 @@ function App() {
           Learn React
         </a>
       </header>*/}
-        <header className="App-header">
-          <p>
-            Creative Lab: fLOW
+          <header className="App-header">
+            <p>
+              Creative Lab: fLOW
         </p>
 
-          <a
-            className="github-link"
-            href="https://github.com/allisonchen23/fLOW"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Our GitHub
+            <a
+              className="github-link"
+              href="https://github.com/allisonchen23/fLOW"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Our GitHub
         </a>
-<<<<<<< HEAD
-          <p>From database: temp = {this.state.temp}</p>
-        </header>
-      </div>
-    );
-  }
-=======
-      </header>
-    </div>
+          </header>
+        </div>
         <div>
           <nav>
             <ul>
@@ -122,7 +106,7 @@ function App() {
               </li>
             </ul>
           </nav>
-  
+
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
@@ -138,9 +122,9 @@ function App() {
           </Switch>
         </div>
       </Router>
-    
-  );
->>>>>>> master
+
+    );
+  }
 }
 
 export default App;
