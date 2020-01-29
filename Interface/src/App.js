@@ -8,27 +8,50 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      temp: 0,
+      temp: "0",
+      db: null,
     };
   }
 
   //lifecylce function of Components
   //called only once 
-
-  componentDidMount() {
-    let db = firebase.database();
-    var curTemp=22;
-  //   db.ref("temp").on('value', (snapshot) => {
-  //     var curTemp = snapshot.val(); 
-  // });
-// ^problem child
-    //   this.setState({
-    //     temp: curTemp,
-    //   })
-    // });
-    this.setState({temp: curTemp})
-
+  increment_temp() {
+    var past_temp = this.state.temp;
+    this.setState({ temp: past_temp + 1 });
   }
+  componentDidMount() {
+    //var userID = firebase.auth().currentUser.uid;
+    firebase.database.enableLogging(true);
+    var cur_temp;
+    var speed;
+    var ref = firebase.database().ref('react-50f71');
+    
+    ref.on('value', function(snapshot){
+      speed = snapshot.val();
+      console.log(speed);
+    });
+    this.setState({ temp: speed});
+    // const db = firebase.database().ref().child('test');
+    // const tempRef = db.child('page1');
+    // tempRef.on('value', snap => {
+    //   this.setState({
+    //     speed: snap.val()
+    //   });
+    // });
+    var curTemp;
+    // db.ref("temp").on('value', (snapshot) => {
+    //   console.log('database value: ',  snapshot.val());
+    //   curTemp = snapshot.val();
+    // });
+    // this.setState({
+    //   temp: curTemp,
+    // })
+
+
+    //this.increment_temp();
+    //this.setState({temp: curTemp});
+  }
+
 
   render() {
     return (
