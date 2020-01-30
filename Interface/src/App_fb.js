@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -12,32 +11,37 @@ import firebase from './firebase.js';
 
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       temp: "0",
-      db: null,
     };
   }
 
   //lifecylce function of Components
   //called only once 
-  increment_temp() {
+  increment_temp = () => {
     var past_temp = this.state.temp;
     this.setState({ temp: past_temp + 1 });
   }
-  componentDidMount() {
+  componentDidMount = () => {
     //var userID = firebase.auth().currentUser.uid;
     firebase.database.enableLogging(true);
-    var cur_temp;
-    var speed;
-    var ref = firebase.database().ref('react-50f71');
+    var curtemp;
+    let tempRef = firebase.database().ref('temp');
 
-    ref.on('value', function (snapshot) {
-      speed = snapshot.val();
-      console.log(speed);
+
+// if speed the database was more of a tree like the following:
+    // temp:
+    //   humidity:
+    //   airspeed:
+    // access humidity from .ref('temp/humidity')
+    // then access value of humidity with speed.humidity
+    tempRef.on('value', snapshot => {
+      curtemp = snapshot.val();
+      this.setState({ temp: curtemp });
     });
-    this.setState({ temp: speed });
+
     // const db = firebase.database().ref().child('test');
     // const tempRef = db.child('page1');
     // tempRef.on('value', snap => {
@@ -90,6 +94,7 @@ class App extends Component {
             >
               Our GitHub
         </a>
+        <p>From database: {this.state.temp}</p>
           </header>
         </div>
         <div>
@@ -127,7 +132,7 @@ class App extends Component {
   }
 }
 
-//export default App;
+export default App;
 
 
 
