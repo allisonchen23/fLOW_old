@@ -15,6 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       temp: "0",
+      name: "",
+      name2: "",
     };
   }
 
@@ -27,8 +29,11 @@ class App extends Component {
   componentDidMount = () => {
     //var userID = firebase.auth().currentUser.uid;
     firebase.database.enableLogging(true);
+    let db = firebase.database();
     var curtemp;
-    let tempRef = firebase.database().ref('temp');
+    let tempRef = db.ref('temp'); //
+    let imageRef = db.ref('image');
+    let nameRef = db.ref('image/name');
 
 
 // if speed the database was more of a tree like the following:
@@ -37,30 +42,19 @@ class App extends Component {
     //   airspeed:
     // access humidity from .ref('temp/humidity')
     // then access value of humidity with speed.humidity
+    //these are called listneners, run asynchronously
     tempRef.on('value', snapshot => {
       curtemp = snapshot.val();
       this.setState({ temp: curtemp });
     });
+    imageRef.on('value', snapshot => {
+      let db_name= snapshot.child('name').val();
+      this.setState({name: db_name});
+    });
+    nameRef.on('value', snapshot => {
+      this.setState({name2: snapshot.val()});
+    });
 
-    // const db = firebase.database().ref().child('test');
-    // const tempRef = db.child('page1');
-    // tempRef.on('value', snap => {
-    //   this.setState({
-    //     speed: snap.val()
-    //   });
-    // });
-    var curTemp;
-    // db.ref("temp").on('value', (snapshot) => {
-    //   console.log('database value: ',  snapshot.val());
-    //   curTemp = snapshot.val();
-    // });
-    // this.setState({
-    //   temp: curTemp,
-    // })
-
-
-    //this.increment_temp();
-    //this.setState({temp: curTemp});
   }
   render() {
     return (
@@ -95,6 +89,8 @@ class App extends Component {
               Our GitHub
         </a>
         <p>From database: {this.state.temp}</p>
+        <p>Image/Name: {this.state.name}</p>
+        <p>should be same value as above: {this.state.name2}</p>
           </header>
         </div>
         <div>
