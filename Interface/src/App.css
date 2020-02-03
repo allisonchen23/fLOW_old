@@ -42,5 +42,21 @@
   background-color: #97D1F4;
   width: 5vw;
   height: 100vh;
-  padding: 0 5% 0 5%;
+}
+
+.nav_list {
+  margin: 0 auto;
+}
+
+.nav_item {
+  display: flex;
+  align-items: center;
+}
+
+.nav_list {
+  list-style: none;
+}
+
+.nav_icon {
+  color: #fff;
 }

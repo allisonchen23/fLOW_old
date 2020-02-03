@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+// Imports icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
 import firebase from './firebase.js';
+
+// Adds icons
+library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle);
 
 class App extends Component {
 
@@ -57,6 +64,7 @@ class App extends Component {
 
 
   }
+  
   render() {
     return (
       <Router>
@@ -96,15 +104,21 @@ class App extends Component {
         </div>
         <div className="nav_wrap">
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+            <ul className="nav_list">
+              <li className="nav_item">
+                <Link to="/"><FontAwesomeIcon icon="home" /></Link>
               </li>
-              <li>
-                <Link to="/about">About</Link>
+              <li className="nav_item">
+                <Link to="/about"><FontAwesomeIcon icon="signal" /></Link>
               </li>
-              <li>
-                <Link to="/users">Users</Link>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="clock" /></Link>
+              </li>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="lightbulb" /></Link>
+              </li>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="question-circle" /></Link>
               </li>
             </ul>
           </nav>
