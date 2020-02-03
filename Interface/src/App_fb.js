@@ -94,7 +94,7 @@ class App extends Component {
         <p>should be same value as above: {this.state.name2}</p>
           </header>
         </div>
-        <div>
+        <div className="nav_wrap">
           <nav>
             <ul>
               <li>
