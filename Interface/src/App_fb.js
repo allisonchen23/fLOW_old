@@ -43,7 +43,7 @@ class App extends Component {
     // access humidity from .ref('temp/humidity')
     // then access value of humidity with speed.humidity
     //these are called listneners, run asynchronously
-    tempRef.on('value', snapshot => {
+    tempRef.on('value', (snapshot) => {
       curtemp = snapshot.val();
       this.setState({ temp: curtemp });
     });
@@ -54,6 +54,7 @@ class App extends Component {
     nameRef.on('value', snapshot => {
       this.setState({name2: snapshot.val()});
     });
+
 
   }
   render() {
