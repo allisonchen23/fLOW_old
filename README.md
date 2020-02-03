@@ -30,6 +30,7 @@ We would like to work with the intersection between technology and engineering a
 <img src="bio_imgs/allison.jpg" width="250">
 
 **Ray Huang** | First Year Computer Science Major<br/>
+<img src="bio_imgs/ray.jpg" width="250">
 
 **Andrew Li** | Second Year Electrical Engineering Major<br/>
 <img src="bio_imgs/andrew.jpg" width="250">
