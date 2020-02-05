@@ -84,10 +84,13 @@ class App extends Component {
           Learn React
         </a>
       </header>*/}
-          <header className="App-header">
-            <p>
-              Creative Lab: fLOW
-        </p>
+        <nav className="top_bar">
+          <div className="button_wrap"></div>
+        </nav>
+        <header className="App-header">
+          <p>
+            Creative Lab: fLOW
+          </p>
 
             <a
               className="github-link"
@@ -103,22 +106,25 @@ class App extends Component {
           </header>
         </div>
         <div className="nav_wrap">
+          <div className="logo_wrap">
+            <a href="#top"><img src="/assets/svg/flowlogo.svg"></img></a>
+          </div>
           <nav>
             <ul className="nav_list">
               <li className="nav_item">
-                <Link to="/"><FontAwesomeIcon icon="home" /></Link>
+                <Link to="/"><FontAwesomeIcon icon="home" className="nav_icon"/></Link>
               </li>
               <li className="nav_item">
-                <Link to="/about"><FontAwesomeIcon icon="signal" /></Link>
+                <Link to="/about"><FontAwesomeIcon icon="signal" className="nav_icon"/></Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="clock" /></Link>
+                <Link to="/users"><FontAwesomeIcon icon="clock" className="nav_icon"/></Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="lightbulb" /></Link>
+                <Link to="/users"><FontAwesomeIcon icon="lightbulb" className="nav_icon"/></Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="question-circle" /></Link>
+                <Link to="/users"><FontAwesomeIcon icon="question-circle" className="nav_icon"/></Link>
               </li>
             </ul>
           </nav>
@@ -149,7 +155,7 @@ export default App;
 
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2></h2>;
 }
 
 function About() {
