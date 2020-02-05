@@ -4,7 +4,7 @@ import logo from './assets/svg/flow_logo.svg';
 // Imports icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle, faBell } from '@fortawesome/free-solid-svg-icons'
 
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ import {
 import firebase from './firebase.js';
 
 // Adds icons
-library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
+library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle, faBell);
 
 console.log(logo);
 
@@ -87,17 +87,29 @@ class App extends Component {
           Learn React
         </a>
       </header>*/}
-        <nav className="top_bar">
-          <ul className="">
-            <li className="">
-              <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
-            </li>
-          </ul>
+      
+        <nav className = "top_bar">
+          
+          <ul className="top_list">
+          <li className="top_item">
+                <a> AC </a>
+          </li>
+
+              
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
+              </li>
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="bell" className="top_iconsa"/></Link>
+              </li>
+              
+            </ul>
         </nav>
-        <header className="App-header">
-          <p>
-            Creative Lab: fLOW
-          </p>
+        
+            <header className="App-header">
+            <p>
+              Creative Lab: fLOW
+        </p>
 
             <a
               className="github-link"
