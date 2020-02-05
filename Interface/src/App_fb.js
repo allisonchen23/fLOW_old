@@ -78,7 +78,7 @@ class App extends Component {
       </header>*/}
           <header className="App-header">
             <p>
-              Creative Lab: fLOW
+              Creative Labs: fLOW
         </p>
 
             <a
