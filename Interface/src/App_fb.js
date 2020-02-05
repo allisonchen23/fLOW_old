@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+// Imports icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle, faBell } from '@fortawesome/free-solid-svg-icons'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
 import firebase from './firebase.js';
+
+// Adds icons
+library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle, faBell);
 
 class App extends Component {
 
@@ -57,6 +64,7 @@ class App extends Component {
 
 
   }
+  
   render() {
     return (
       <Router>
@@ -76,9 +84,27 @@ class App extends Component {
           Learn React
         </a>
       </header>*/}
-          <header className="App-header">
+        <nav className = "top_bar">
+          
+          <ul className="top_list">
+          <li className="top_item">
+                <a> AC </a>
+          </li>
+
+              
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
+              </li>
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="bell" className="top_iconsa"/></Link>
+              </li>
+              
+            </ul>
+        </nav>
+        
+            <header className="App-header">
             <p>
-              Creative Labs: fLOW
+              Creative Lab: fLOW
         </p>
 
             <a
@@ -94,17 +120,26 @@ class App extends Component {
         <p>should be same value as above: {this.state.name2}</p>
           </header>
         </div>
-        <div>
+        <div className="nav_wrap">
+          <div className="logo_wrap">
+            <a href="#top"><img src="/assets/svg/flowlogo.svg"></img></a>
+          </div>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+            <ul className="nav_list">
+              <li className="nav_item">
+                <Link to="/"><FontAwesomeIcon icon="home" className="nav_icon"/></Link>
               </li>
-              <li>
-                <Link to="/about">About</Link>
+              <li className="nav_item">
+                <Link to="/about"><FontAwesomeIcon icon="signal" className="nav_icon"/></Link>
               </li>
-              <li>
-                <Link to="/users">Users</Link>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="clock" className="nav_icon"/></Link>
+              </li>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="lightbulb" className="nav_icon"/></Link>
+              </li>
+              <li className="nav_item"> 
+                <Link to="/users"><FontAwesomeIcon icon="question-circle" className="nav_icon"/></Link>
               </li>
             </ul>
           </nav>
@@ -135,7 +170,7 @@ export default App;
 
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2></h2>;
 }
 
 function About() {
