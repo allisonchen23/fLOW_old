@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from './assets/svg/flow_logo.svg';
 // Imports icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import {
   BrowserRouter as Router,
@@ -14,7 +15,9 @@ import {
 import firebase from './firebase.js';
 
 // Adds icons
-library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle);
+library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
+
+console.log(logo);
 
 class App extends Component {
 
@@ -85,7 +88,11 @@ class App extends Component {
         </a>
       </header>*/}
         <nav className="top_bar">
-          <div className="button_wrap"></div>
+          <ul className="">
+            <li className="">
+              <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
+            </li>
+          </ul>
         </nav>
         <header className="App-header">
           <p>
@@ -107,24 +114,44 @@ class App extends Component {
         </div>
         <div className="nav_wrap">
           <div className="logo_wrap">
-            <a href="#top"><img src="/assets/svg/flowlogo.svg"></img></a>
+            <a href="#top"><img src={logo}/></a>
           </div>
           <nav>
             <ul className="nav_list">
               <li className="nav_item">
-                <Link to="/"><FontAwesomeIcon icon="home" className="nav_icon"/></Link>
+                <Link class="nav_square" to="/">
+                  <div className="">
+                    <FontAwesomeIcon icon="home" className="nav_icon"/>
+                  </div>
+                </Link> 
               </li>
               <li className="nav_item">
-                <Link to="/about"><FontAwesomeIcon icon="signal" className="nav_icon"/></Link>
+                <Link class="nav_square" to="/">
+                  <div className="">
+                    <FontAwesomeIcon icon="signal" className="nav_icon"/>
+                  </div>
+                </Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="clock" className="nav_icon"/></Link>
+                <Link class="nav_square" to="/">
+                  <div className="">
+                    <FontAwesomeIcon icon="clock" className="nav_icon"/>
+                  </div>
+                 </Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="lightbulb" className="nav_icon"/></Link>
+                <Link class="nav_square" to="/">
+                  <div className="">
+                    <FontAwesomeIcon icon="lightbulb" className="nav_icon"/>
+                  </div>
+                </Link>
               </li>
               <li className="nav_item"> 
-                <Link to="/users"><FontAwesomeIcon icon="question-circle" className="nav_icon"/></Link>
+                <Link class="nav_square" to="/">
+                    <div className="">
+                      <FontAwesomeIcon icon="question-circle" className="nav_icon"/>
+                    </div>
+                  </Link>
               </li>
             </ul>
           </nav>
