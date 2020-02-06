@@ -20,13 +20,23 @@ class Top_Bar extends Component {
   render() {
     return (
         <React.Fragment>
-          <nav className="top_bar">
-            <ul className="">
-              <li className="">
+            <nav className = "top_bar">
+          
+          <ul className="top_list">
+          <li className="top_item">
+                <a> AC </a>
+          </li>
+
+              
+              <li className="top_item">
                 <Link to="/"><FontAwesomeIcon icon="user-circle" className="top_icons"/></Link>
               </li>
+              <li className="top_item">
+                <Link to="/"><FontAwesomeIcon icon="bell" className="top_iconsa"/></Link>
+              </li>
+              
             </ul>
-          </nav>
+        </nav>
         </React.Fragment>
     );
   }

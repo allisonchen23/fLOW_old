@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
-
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
 
@@ -27,21 +26,21 @@ class Side_Nav extends Component {
             <nav>
               <ul className="nav_list">
                 <li className="nav_item">
-                  <Link class="nav_square" to="/">
+                  <Link class="nav_square" to="/pages/home.js">
                     <div className="">
                       <FontAwesomeIcon icon="home" className="nav_icon"/>
                     </div>
                   </Link> 
                 </li>
                 <li className="nav_item">
-                  <Link class="nav_square" to="/">
+                  <Link class="nav_square" to="/pages/data.js">
                     <div className="">
                       <FontAwesomeIcon icon="signal" className="nav_icon"/>
                     </div>
                   </Link>
                 </li>
                 <li className="nav_item"> 
-                  <Link class="nav_square" to="/">
+                  <Link class="nav_square" to="/pages/about.js">
                     <div className="">
                       <FontAwesomeIcon icon="clock" className="nav_icon"/>
                     </div>

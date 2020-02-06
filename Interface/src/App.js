@@ -26,53 +26,7 @@ console.log(logo);
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      temp: "0",
-      name: "",
-      name2: "",
-    };
-  }
-
-  //lifecylce function of Components
-  //called only once 
-  increment_temp = () => {
-    var past_temp = this.state.temp;
-    this.setState({ temp: past_temp + 1 });
-  }
-  componentDidMount = () => {
-    //var userID = firebase.auth().currentUser.uid;
-    firebase.database.enableLogging(true);
-    let db = firebase.database();
-    var curtemp;
-    let tempRef = db.ref('temp'); //
-    let imageRef = db.ref('image');
-    let nameRef = db.ref('image/name');
-
-
-// if speed the database was more of a tree like the following:
-    // temp:
-    //   humidity:
-    //   airspeed:
-    // access humidity from .ref('temp/humidity')
-    // then access value of humidity with speed.humidity
-    //these are called listneners, run asynchronously
-    tempRef.on('value', (snapshot) => {
-      curtemp = snapshot.val();
-      this.setState({ temp: curtemp });
-    });
-    imageRef.on('value', snapshot => {
-      let db_name= snapshot.child('name').val();
-      this.setState({name: db_name});
-    });
-    nameRef.on('value', snapshot => {
-      this.setState({name2: snapshot.val()});
-    });
-
-
-  }
-  
+ 
   render() {
     return (
       <React.Fragment>
@@ -82,9 +36,9 @@ class App extends Component {
          <Top_Bar/>
        
           <Switch>
-            <Route path = "/" exact component={Home} />
-            <Route path = "/data" compoent={Data} />
-            <Route path = "/about" compoent={About} />
+            <Route path = "/pages/home.js" exact component={Home} />
+            <Route path = "/pages/data.js" exact component={Data} />
+            <Route path = "/pages/about.js" exact component={About} />
           </Switch>
           </BrowserRouter>
       </React.Fragment>
