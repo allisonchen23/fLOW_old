@@ -17,7 +17,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import firebase from './firebase.js';
 
 // Adds icons
 library.add(faHome, faSignal, faClock, faLightbulb, faQuestionCircle, faUserCircle);
